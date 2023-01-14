@@ -31,3 +31,12 @@ class BinarySearchTreeNode:
                 return self.right.search(val)
             else:
                 return False
+            
+    def to_order_traversal(self):
+        elements = []
+        if self.left:
+            elements += self.left.to_order_traversal()
+        elements.append(self.data)
+        if self.right:
+            elements += self.right.to_order_traversal()
+        return elements
