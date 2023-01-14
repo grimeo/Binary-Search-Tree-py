@@ -74,9 +74,10 @@ class BinarySearchTreeNode:
                 return self.right
             
             max_val = self.left.find_max()
-            self.data = max_val 
+            self.data = max_val
             self.left = self.left.delete(max_val)
             
+        return self
     
     def find_max(self):
         if self.right is None:
@@ -100,10 +101,17 @@ def build_tree(elements):
     return root
 
 if __name__ == '__main__':
+    
+    elements = [3,5,7,23,78,12,8,25,63]
+    print(elements)
+    elements_tree = build_tree(elements)
+    elements_tree.delete(7)
+    print(elements_tree.to_order_traversal())
+    
     myname = ['R', 'O', 'M', 'E', 'O', 'G', 'E', 'S', 'C', 'O', 'L', 'A', 'N', 'O']
     myname_tree = build_tree(myname)
 
-    print("My name in elements",myname)
+    print("My name in elements : ",myname)
 
     print("In order : ", myname_tree.to_order_traversal())
     print("Pre order: ",myname_tree.to_pre_order_traversal())
