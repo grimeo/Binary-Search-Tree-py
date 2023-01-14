@@ -49,3 +49,12 @@ class BinarySearchTreeNode:
             elements += self.right.to_post_order_traversal()
         elements.append(self.data)
         return elements
+    
+    def to_pre_order_traversal(self):
+        elements = [self.data]
+        if self.left:
+            elements += self.left.to_pre_order_traversal()
+        if self.right:
+            elements += self.right.to_pre_order_traversal()
+            return elements
+   
