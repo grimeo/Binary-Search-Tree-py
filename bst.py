@@ -78,3 +78,13 @@ def build_tree(elements):
     for i in range(1,len(elements)):
         root.add_child(elements[i])
     return root
+
+if __name__ == '__main__':
+    myname = ['R', 'O', 'M', 'E', 'O', 'G', 'E', 'S', 'C', 'O', 'L', 'A', 'N', 'O']
+    myname_tree = build_tree(myname)
+
+    print("My name in elements",myname)
+
+    print("In order : ", myname_tree.to_order_traversal())
+    print("Pre order: ",myname_tree.to_pre_order_traversal())
+    print("Post order : ",myname_tree.to_post_order_traversal())
